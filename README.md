@@ -5,241 +5,267 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Selamat Datang di Gacoan</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Transisi untuk keranjang pop-up */
+    .cart-drawer {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Efek iOS-like ease-in-out */
+    }
+
+    /* Keyframe untuk animasi slide-in pada item keranjang */
+    @keyframes slideInFromTop {
+      0% {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .cart-item-animate {
+      animation: slideInFromTop 0.3s ease-out;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col font-sans">
 
-  <header class="bg-red-600 text-white p-4 shadow-lg sticky top-0 z-50">
+  <header class="bg-blue-600 text-white p-4 shadow-lg sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold tracking-wide">Gacoan Jakarta</h1>
-      <a href="#cart-section" class="md:hidden">
+      <button id="cart-toggle" class="relative transform transition-transform duration-150 active:scale-95">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.102 1.743.707 1.743H18a2 2 0 002-2V7.786" />
         </svg>
-      </a>
+        <span id="cart-item-count" class="absolute -top-1 -right-1 bg-white text-pink-600 rounded-full text-xs w-4 h-4 flex items-center justify-center font-bold" style="display:none;">0</span>
+      </button>
     </div>
   </header>
 
   <nav class="bg-white sticky top-16 z-40 shadow-sm md:shadow-md p-4">
     <div class="container mx-auto">
       <ul class="flex justify-around items-center space-x-4 overflow-x-auto whitespace-nowrap md:justify-center">
-        <li><a href="#noodle-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors">🍜 Noodle</a></li>
-        <li><a href="#dimsum-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors">🥟 Dimsum</a></li>
-        <li><a href="#bar-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors">🥤 Beverage</a></li>
+        <li><a href="#noodle-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🍜 Noodle</a></li>
+        <li><a href="#dimsum-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🥟 Dimsum</a></li>
+        <li><a href="#beverage-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🥤 Beverage</a></li>
       </ul>
     </div>
   </nav>
 
-  <main class="flex-1 container mx-auto p-6 flex flex-col md:flex-row gap-8">
+  <main class="flex-1 container mx-auto p-4 flex flex-col md:flex-row gap-8">
 
     <section class="flex-1">
-      <h2 class="text-3xl font-bold mb-6 text-gray-800 border-b-2 border-red-500 pb-2">SELAMAT DATAG DI GACOAN .....</h2>
+      <h2 class="text-3xl font-bold mb-6 text-gray-800 border-b-2 border-pink-500 pb-2">SELAMAT DATANG DI GACOAN</h2>
 
       <h3 id="noodle-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700">🍜 Noodle</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Suit</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv.0</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie gacoan Lv. 1</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 2</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 3</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 4</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 6</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 8</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Hompimpa Lv. 1</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
          <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Hompimpa Lv. 2</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
          <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Hompimpa Lv. 3</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
          <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Hompimpa Lv. 4</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Hompimpa Lv. 6</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 12.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 12.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div><div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Hompimpa Lv. 8</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 12.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-sm hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 12.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
       </div>
       
-      
-
       <h3 id="dimsum-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700">🥟 Dimsum</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Udang Keju</h4>
           <p class="text-blue-600 text-sm font-semibold">DIMSUM.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Udang Rambutan</h4>
           <p class="text-blue-600 text-sm font-semibold">DIMSUM.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Lumpia Udang</h4>
           <p class="text-blue-600 text-sm font-semibold">DIMSUM.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Siomay Ayam</h4>
           <p class="text-blue-600 text-sm font-semibold">DIMSUM.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Pangsit Goreng</h4>
           <p class="text-blue-600 text-sm font-semibold">DIMSUM.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-1 px-2 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
       </div>
 
-      <h3 id="bar-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700">🥤 Beverage</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <h3 id="beverage-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700">🥤 Beverage</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Gobak Sodor</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Petak Umpet</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Teklek</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Sluku Bathok</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
-        </div>
-
-      <h3 id="bar-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700">🥤 Beverage</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Green Thai Tea</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Thai Tea</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Lemon Tea</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Tea</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+        <div class="bg-brown rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Coklat</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Vanilla Late</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Teh Tarik</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Air Mineral</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
-          <p class="font-bold text-lg mt-2 text-red-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-red-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-red-700 transition-colors duration-300">Tambah</button>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
       </div>
     </section>
 
-    <aside id="cart-section" class="bg-white rounded-2xl shadow-lg p-6 flex flex-col sticky top-24 h-fit md:w-1/3 lg:w-1/4">
-      <h2 class="text-xl font-bold mb-4 text-gray-800">🛒 Keranjang Belanja</h2>
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+    <aside id="cart-section" class="fixed top-1/4 right-0 z-50 h-3/4 w-full max-w-sm bg-white rounded-l-2xl shadow-xl p-6 cart-drawer transform translate-x-full md:relative md:top-24 md:h-fit md:w-1/3 md:translate-x-0">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-gray-800">🛒 Keranjang Belanja</h2>
+        <button id="cart-close" class="text-gray-600 hover:text-gray-900 md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
       <ul id="cart" class="space-y-4 text-sm text-gray-700">
         <li class="text-gray-400 italic text-center py-4">Keranjang Anda kosong</li>
       </ul>
@@ -249,16 +275,16 @@
       </div>
       <div class="mt-6">
         <label class="block text-sm font-semibold mb-2">Nama Pelanggan:</label>
-        <input id="customerName" type="text" placeholder="Masukkan nama Anda" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500 transition-colors" />
+        <input id="customerName" type="text" placeholder="Masukkan nama Anda" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" />
       </div>
       <div class="mt-4">
         <label class="block text-sm font-semibold mb-2">Pilih Tipe Pesanan:</label>
-        <select id="orderType" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-red-500 transition-colors">
+        <select id="orderType" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors">
           <option value="Dine In">Dine In</option>
           <option value="Take Away">Take Away</option>
         </select>
       </div>
-      <button id="checkout" class="w-full mt-6 bg-green-600 text-white rounded-lg py-3 font-semibold hover:bg-green-700 transition-colors duration-300 shadow-md">Checkout via WhatsApp</button>
+      <button id="checkout" class="w-full mt-6 bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md transform active:scale-95">Checkout via WhatsApp</button>
     </aside>
 
   </main>
@@ -274,11 +300,19 @@
     const orderType = document.getElementById("orderType");
     const customerName = document.getElementById("customerName");
     const addButtons = document.querySelectorAll(".add-to-cart");
+    const cartToggleBtn = document.getElementById("cart-toggle");
+    const cartSection = document.getElementById("cart-section");
+    const cartCloseBtn = document.getElementById("cart-close");
+    const cartItemCount = document.getElementById("cart-item-count");
+    const cartOverlay = document.getElementById("cart-overlay");
 
     let totalHarga = 0;
+    let totalItems = 0;
 
     function updateTotalDisplay() {
       totalEl.innerText = "Rp " + totalHarga.toLocaleString("id-ID");
+      cartItemCount.innerText = totalItems;
+      cartItemCount.style.display = totalItems > 0 ? 'flex' : 'none';
     }
 
     function ensureEmptyTextRemoved() {
@@ -297,6 +331,7 @@
         qty++;
         qtySpan.innerText = qty;
         totalHarga += harga;
+        totalItems++;
         updateTotalDisplay();
         return;
       }
@@ -304,16 +339,16 @@
       const li = document.createElement("li");
       li.dataset.item = item;
       li.dataset.harga = harga;
-      li.classList.add("flex", "justify-between", "items-center", "gap-2");
+      li.classList.add("flex", "justify-between", "items-center", "gap-2", "cart-item-animate");
 
       li.innerHTML = `
         <span class="text-sm">${item}</span>
         <div class="flex items-center gap-2">
-          <button class="minus bg-gray-200 px-2 rounded">-</button>
+          <button class="minus bg-gray-200 px-2 rounded transform transition-transform duration-150 active:scale-95">-</button>
           <span class="qty px-2">1</span>
-          <button class="plus bg-gray-200 px-2 rounded">+</button>
+          <button class="plus bg-gray-200 px-2 rounded transform transition-transform duration-150 active:scale-95">+</button>
           <span class="harga text-sm">Rp ${harga.toLocaleString("id-ID")}</span>
-          <button class="hapus text-red-500 hover:text-red-700">❌</button>
+          <button class="hapus text-pink-500 hover:text-pink-700 transform transition-transform duration-150 active:scale-95">❌</button>
         </div>
       `;
 
@@ -323,6 +358,7 @@
         qty++;
         qtySpan.innerText = qty;
         totalHarga += harga;
+        totalItems++;
         updateTotalDisplay();
       });
 
@@ -333,27 +369,38 @@
           qty--;
           qtySpan.innerText = qty;
           totalHarga -= harga;
+          totalItems--;
           updateTotalDisplay();
         }
       });
 
       li.querySelector(".hapus").addEventListener("click", () => {
-        let qty = parseInt(li.querySelector(".qty").innerText, 10);
-        totalHarga -= harga * qty;
-        if (totalHarga < 0) totalHarga = 0;
-        li.remove();
-        updateTotalDisplay();
+        li.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+        li.style.opacity = '0';
+        li.style.transform = 'translateX(20px)';
+        
+        li.addEventListener('transitionend', () => {
+            let qty = parseInt(li.querySelector(".qty").innerText, 10);
+            totalHarga -= harga * qty;
+            totalItems -= qty;
+            if (totalHarga < 0) totalHarga = 0;
+            if (totalItems < 0) totalItems = 0;
+            li.remove();
+            updateTotalDisplay();
 
-        if (cart.children.length === 0) {
-          cart.innerHTML = `<li class="text-gray-400 italic text-center py-4">Keranjang Anda kosong</li>`;
-        }
+            if (cart.children.length === 0) {
+              cart.innerHTML = `<li class="text-gray-400 italic text-center py-4">Keranjang Anda kosong</li>`;
+            }
+        });
       });
 
       cart.appendChild(li);
       totalHarga += harga;
+      totalItems++;
       updateTotalDisplay();
     }
 
+    // Event listener untuk tombol 'Tambah'
     addButtons.forEach(btn => {
       btn.addEventListener("click", () => {
         const card = btn.closest(".flex.flex-col");
@@ -362,6 +409,24 @@
         const harga = parseInt(hargaText.replace(/[^\d]/g, ""), 10);
         tambahKeKeranjang(item, harga);
       });
+    });
+
+    // Event listener untuk tombol pop-up keranjang
+    cartToggleBtn.addEventListener("click", () => {
+      cartSection.classList.remove("translate-x-full");
+      cartOverlay.classList.remove("hidden");
+    });
+
+    // Event listener untuk tombol tutup pop-up
+    cartCloseBtn.addEventListener("click", () => {
+      cartSection.classList.add("translate-x-full");
+      cartOverlay.classList.add("hidden");
+    });
+
+    // Event listener untuk menutup keranjang saat overlay diklik
+    cartOverlay.addEventListener("click", () => {
+      cartSection.classList.add("translate-x-full");
+      cartOverlay.classList.add("hidden");
     });
 
     checkoutBtn.addEventListener("click", () => {
