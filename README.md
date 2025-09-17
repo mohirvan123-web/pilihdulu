@@ -228,7 +228,7 @@
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-2 px-4 font-semibold hover:bg-blue-700 transition-colors duration-300 transform active:scale-95">Tambah</button>
         </div>
-        <div class="bg-brown rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Coklat</h4>
           <p class="text-gray-600 text-sm font-semibold">BAR.</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
@@ -257,7 +257,7 @@
 
     <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
 
-    <aside id="cart-section" class="fixed top-1/4 right-0 z-50 h-3/4 w-full max-w-sm bg-white rounded-l-2xl shadow-xl p-6 cart-drawer transform translate-x-full md:relative md:top-24 md:h-fit md:w-1/3 md:translate-x-0">
+    <aside id="cart-section" class="fixed top-24 right-0 z-50 h-3/4 w-full max-w-sm bg-white rounded-l-2xl shadow-xl p-6 cart-drawer transform translate-x-full md:relative md:top-24 md:h-fit md:w-1/3 md:translate-x-0">
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-xl font-bold text-gray-800">🛒 Keranjang Belanja</h2>
         <button id="cart-close" class="text-gray-600 hover:text-gray-900 md:hidden">
