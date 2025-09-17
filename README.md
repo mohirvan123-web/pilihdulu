@@ -257,7 +257,8 @@
 
     <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
 
-    <aside id="cart-section" class="fixed top-24 right-0 z-50 h-3/4 w-full max-w-sm bg-white rounded-l-2xl shadow-xl p-6 cart-drawer transform translate-x-full md:relative md:top-24 md:h-fit md:w-1/3 md:translate-x-0 flex flex-col">
+    <aside id="cart-section" class="fixed inset-0 z-50 h-full w-full bg-white cart-drawer transform translate-x-full md:relative md:h-fit md:w-1/3 md:translate-x-0 rounded-l-2xl shadow-xl flex flex-col p-6">
+      
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-xl font-bold text-gray-800">🛒 Keranjang Belanja</h2>
         <button id="cart-close" class="text-gray-600 hover:text-gray-900 md:hidden">
