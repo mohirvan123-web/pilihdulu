@@ -257,7 +257,7 @@
 
     <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
 
-    <aside id="cart-section" class="fixed top-24 right-0 z-50 h-3/4 w-full max-w-sm bg-white rounded-l-2xl shadow-xl p-6 cart-drawer transform translate-x-full md:relative md:top-24 md:h-fit md:w-1/3 md:translate-x-0">
+    <aside id="cart-section" class="fixed top-24 right-0 z-50 h-3/4 w-full max-w-sm bg-white rounded-l-2xl shadow-xl p-6 cart-drawer transform translate-x-full md:relative md:top-24 md:h-fit md:w-1/3 md:translate-x-0 flex flex-col">
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-xl font-bold text-gray-800">🛒 Keranjang Belanja</h2>
         <button id="cart-close" class="text-gray-600 hover:text-gray-900 md:hidden">
@@ -266,25 +266,31 @@
           </svg>
         </button>
       </div>
-      <ul id="cart" class="space-y-4 text-sm text-gray-700">
-        <li class="text-gray-400 italic text-center py-4">Keranjang Anda kosong</li>
-      </ul>
-      <div class="border-t-2 border-gray-200 mt-6 pt-6 flex justify-between items-center font-bold text-lg">
-        <span>Total:</span>
-        <span id="total" class="text-green-600">Rp 0</span>
+
+      <div class="flex-grow overflow-y-auto pr-2">
+          <ul id="cart" class="space-y-4 text-sm text-gray-700">
+            <li class="text-gray-400 italic text-center py-4">Keranjang Anda kosong</li>
+          </ul>
       </div>
-      <div class="mt-6">
-        <label class="block text-sm font-semibold mb-2">Nama Pelanggan:</label>
-        <input id="customerName" type="text" placeholder="Masukkan nama Anda" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" />
+
+      <div class="border-t-2 border-gray-200 mt-6 pt-6">
+        <div class="flex justify-between items-center font-bold text-lg">
+            <span>Total:</span>
+            <span id="total" class="text-green-600">Rp 0</span>
+        </div>
+        <div class="mt-6">
+            <label class="block text-sm font-semibold mb-2">Nama Pelanggan:</label>
+            <input id="customerName" type="text" placeholder="Masukkan nama Anda" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" />
+        </div>
+        <div class="mt-4">
+            <label class="block text-sm font-semibold mb-2">Pilih Tipe Pesanan:</label>
+            <select id="orderType" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors">
+                <option value="Dine In">Dine In</option>
+                <option value="Take Away">Take Away</option>
+            </select>
+        </div>
+        <button id="checkout" class="w-full mt-6 bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md transform active:scale-95">Checkout via WhatsApp</button>
       </div>
-      <div class="mt-4">
-        <label class="block text-sm font-semibold mb-2">Pilih Tipe Pesanan:</label>
-        <select id="orderType" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors">
-          <option value="Dine In">Dine In</option>
-          <option value="Take Away">Take Away</option>
-        </select>
-      </div>
-      <button id="checkout" class="w-full mt-6 bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md transform active:scale-95">Checkout via WhatsApp</button>
     </aside>
 
   </main>
