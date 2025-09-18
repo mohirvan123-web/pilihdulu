@@ -600,7 +600,7 @@ checkoutBtn.addEventListener("click", () => {
   }
 
   let pesan = `Halo Gacoan Jl. Jakarta, saya mau pesan.%0A`;
-  pesan += `Tipe Pesanan: $*{orderType.value}*%0A%0A`;
+  pesan += `Tipe Pesanan: ${*orderType.value*}%0A%0A`;
   pesan += `Nama: ${nama}%0A%0A`;
   pesan += `Daftar pesanan:%0A`;
 
