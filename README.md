@@ -599,21 +599,22 @@ checkoutBtn.addEventListener("click", () => {
     return;
   }
 
-let pesan = `Halo, saya mau pesan.%0A`;
-      pesan += `Nama: ${nama}%0A`;
-      pesan += `Tipe Pesanan: ${orderType.value}%0A%0A`;
-      pesan += `Daftar pesanan:%0A`;
-
-      [...cart.children].forEach(li => {
-        const item = li.dataset.item;
-        const hargaPerItem = Number(li.dataset.harga);
-        const qty = Number(li.querySelector(".qty").innerText);
-        const subtotal = hargaPerItem * qty;
-        pesan += `- ${item} x${qty} = Rp ${subtotal.toLocaleString("id-ID")}%0A`;
-      });
-
-      pesan += `%0ATotal: ${totalEl.innerText}%0A`;
-      pesan += `%0ATerima kasih 🙏`;
+const tipePesananBold = `*${orderType.value}*`;
+  let pesan = `🔔 Pesanan Baru 🔔%0A%0A`;
+  pesan += `👤 Nama: ${nama}%0A`;
+  pesan += `📦 Tipe Pesanan: ${tipePesananBold}%0A%0A`;
+  pesan += `🍜 *Daftar Pesanan:*%0A`;
+  
+  [...cart.children].forEach(li => {
+    const item = li.dataset.item;
+    const qty = Number(li.querySelector(".qty").innerText);
+    pesan += `- ${item} x${qty}%0A`;
+  });
+  
+  pesan += `%0A────────────────────────%0A`;
+  pesan += `💸 *Total:* ${totalEl.innerText}%0A`;
+  pesan += `────────────────────────%0A%0A`;
+  pesan += `Terima kasih 🙏, pesanan Anda akan segera diproses.`;
 
       const noWA = "628991190404";
       const url = `https://api.whatsapp.com/send?phone=${noWA}&text=${pesan}`;
