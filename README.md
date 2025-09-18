@@ -93,7 +93,7 @@
         </div>
       </div>
 
-      <h3 id="noodle-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700">🍜 Noodle</h3>
+      <h3 id="noodle-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0">🍜 Noodle</h3>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Suit</h4>
@@ -220,11 +220,11 @@
         </div>
       </div>
       
-      <h3 id="dimsum-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700">🥟 Dimsum</h3>
+      <h3 id="dimsum-section" class="text-3xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0">🥟 Dimsum</h3>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.09]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Udang Keju</h4>
-          <p class="text-blue-600 text-sm font-semibold">DIMSUM.</p>
+          <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -233,7 +233,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Udang Rambutan</h4>
-          <p class="text-blue-600 text-sm font-semibold">DIMSUM.</p>
+          <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -242,7 +242,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Lumpia Udang</h4>
-          <p class="text-blue-600 text-sm font-semibold">DIMSUM.</p>
+          <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -251,7 +251,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Siomay Ayam</h4>
-          <p class="text-blue-600 text-sm font-semibold">DIMSUM.</p>
+          <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -260,7 +260,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Pangsit Goreng</h4>
-          <p class="text-blue-600 text-sm font-semibold">DIMSUM.</p>
+          <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -269,11 +269,11 @@
         </div>
       </div>
 
-      <h3 id="beverage-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700">🥤 Beverage</h3>
+      <h3 id="beverage-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0">🥤 Beverage</h3>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Gobak Sodor</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -282,7 +282,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Petak Umpet</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -291,7 +291,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Teklek</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -300,7 +300,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Sluku Bathok</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -309,7 +309,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Green Thai Tea</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -318,7 +318,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Thai Tea</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>  
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -327,7 +327,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Lemon Tea</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -336,7 +336,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Tea</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+    <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>      
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -345,7 +345,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Coklat</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+      <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -354,7 +354,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Vanilla Late</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+ <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -363,7 +363,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Teh Tarik</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+ <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
@@ -372,7 +372,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Air Mineral</h4>
-          <p class="text-gray-600 text-sm font-semibold">BAR.</p>
+ <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
         <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
   Tambah
