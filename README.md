@@ -608,7 +608,7 @@ const tipePesananBold = `*${orderType.value}*`;
    [...cart.children].forEach(li => {
     const item = li.dataset.item;
     const qty = Number(li.querySelector(".qty").innerText);
-    pesan += `- ${item}   -   ${qty}%0A`;
+    pesan += `- ${item}   ➡️   ${qty}%0A`;
   }); 
   pesan += `%0A────────────────────────%0A`;
   pesan += `💸 *Total:* ${totalEl.innerText}%0A`;
