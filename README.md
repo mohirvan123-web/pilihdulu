@@ -605,12 +605,11 @@ const tipePesananBold = `*${orderType.value}*`;
   pesan += `📦 Tipe Pesanan: ${tipePesananBold}%0A%0A`;
   pesan += `🍜 *Daftar Pesanan:*%0A`;
   
-  [...cart.children].forEach(li => {
+   [...cart.children].forEach(li => {
     const item = li.dataset.item;
     const qty = Number(li.querySelector(".qty").innerText);
-    pesan += `- ${item} x${qty}%0A`;
-  });
-  
+    pesan += `- ${item}   -   ${qty}%0A`;
+  }); 
   pesan += `%0A────────────────────────%0A`;
   pesan += `💸 *Total:* ${totalEl.innerText}%0A`;
   pesan += `────────────────────────%0A%0A`;
