@@ -599,20 +599,19 @@ checkoutBtn.addEventListener("click", () => {
     return;
   }
 
-  let pesan = `Halo, saya mau pesan.%0A`;
+  let pesan = `Halo Gacoan Jl. Jakarta, saya mau pesan.%0A`;
+  pesan += `Tipe Pesanan: $*{orderType.value}*%0A%0A`;
   pesan += `Nama: ${nama}%0A%0A`;
   pesan += `Daftar pesanan:%0A`;
 
   [...cart.children].forEach(li => {
     const item = li.dataset.item;
-    const hargaPerItem = Number(li.dataset.harga);
     const qty = Number(li.querySelector(".qty").innerText);
     const subtotal = hargaPerItem * qty;
     pesan += `- ${item} x${qty} = Rp ${subtotal.toLocaleString("id-ID")}%0A`;
   });
 
   pesan += `%0ATotal: ${totalEl.innerText}%0A`;
-  pesan += `Tipe Pesanan: ${orderType.value}%0A%0A`;
   pesan += `Terima kasih 🙏`;
 
   const noWA = "628991190404";
