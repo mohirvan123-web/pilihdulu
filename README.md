@@ -50,7 +50,7 @@
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col font-sans">
 
-  <header class="bg-blue-600 text-white p-4 shadow-lg sticky top-0 z-50">
+  <header class="bg-blue-600 rounded-xl text-white p-1 shadow-lg sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold tracking-wide">Gacoan Jakarta</h1>
       <button id="cart-toggle" class="relative transform transition-transform duration-150 active:scale-95">
@@ -62,7 +62,7 @@
     </div>
   </header>
 
-  <nav class="bg-white sticky top-16 z-40 shadow-sm md:shadow-md p-4">
+  <nav class="bg-white sticky top-10 z-40 shadow-sm md:shadow-md p-2">
     <div class="container mx-auto">
       <ul class="flex justify-around items-center space-x-4 overflow-x-auto whitespace-nowrap md:justify-center">
         <li><a href="#noodle-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🍜 Noodle</a></li>
@@ -74,7 +74,7 @@
 
   <main class="flex-1 container mx-auto p-4 flex flex-col md:flex-row gap-8">
     <section class="flex-1">
-      <h2 class="text-3xl font-bold mb-6 text-gray-800 border-b-2 border-pink-500 pb-2">SELAMAT DATANG DI GACOAN</h2>
+      <h2 class="text-3xl font-bold mb-3 text-gray-800 border-b-2 border-pink-500 pb-2">SELAMAT DATANG DI GACOAN</h2>
 
       <div class="bg-white rounded-xl shadow-md p-6 mb-8 border-t-4 border-blue-600">
         <h3 class="text-xl font-bold mb-4 text-gray-800">Detail Pesanan</h3>
@@ -387,7 +387,7 @@
     <aside id="cart-section" class="fixed inset-0 z-50 h-full w-full bg-white cart-drawer transform translate-x-full md:relative md:h-fit md:w-1/3 md:translate-x-0 rounded-l-2xl shadow-xl flex flex-col p-6">
       
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-xl font-bold text-gray-800">🛒 Keranjang Belanja</h2>
+        <h2 class="text-xl pb-0 font-bold text-gray-800">🛒 List Pesanan</h2>
         <button id="cart-close" class="text-gray-600 hover:text-gray-900 md:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -397,16 +397,16 @@
 
       <div class="flex-grow overflow-y-auto pr-2">
           <ul id="cart" class="space-y-4 text-sm text-gray-700">
-            <li class="text-gray-400 italic text-center py-4">Keranjang Anda kosong</li>
+            <li class="text-gray-400 italic text-center py-4">pesanan anda belum anda</li>
           </ul>
       </div>
 
-      <div class="border-t-2 border-gray-200 mt-6 pt-6">
+      <div class="border-t-2 border-pink-600 mt-6 pt-6">
         <div class="flex justify-between items-center font-bold text-lg">
             <span>Total:</span>
             <span id="total" class="text-green-600">Rp 0</span>
         </div>
-        <button id="checkout" class="w-full mt-6 bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md transform active:scale-95">Checkout via WhatsApp</button>
+        <button id="checkout" class="w-full mt-6 bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md transform active:scale-95">Submit via WhatsApp</button>
       </div>
     </aside>
 
