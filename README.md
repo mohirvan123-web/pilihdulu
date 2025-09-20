@@ -295,7 +295,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Teklek</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Teklek" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
@@ -304,7 +304,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Sluku Bathok</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Sluku Bathok" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
@@ -313,7 +313,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Green Thai Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Green Thai Tea" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
@@ -322,7 +322,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Thai Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>  
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Thai Tea" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
@@ -331,7 +331,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Lemon Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Lemon Tea" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
@@ -340,7 +340,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>      
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 5.000</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Tea" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
@@ -349,7 +349,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Coklat</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Coklat" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
@@ -358,7 +358,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Vanilla Late</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Vanilla Late" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
@@ -367,7 +367,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Teh Tarik</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Teh Tarik" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
@@ -376,7 +376,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Air Mineral</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 5.000</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
           <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Air Mineral" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
@@ -411,15 +411,20 @@
             <span>Total:</span>
             <span id="total" class="text-green-600">Rp 0</span>
         </div>
-        <button id="reset-cart" class="w-full bg-pink-500 text-white rounded-lg py-2 font-semibold hover:bg-red-600 transition-colors duration-300 shadow-md transform active:scale-95">
-            <div class="flex items-center justify-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-                <span>Reset Pesanan</span>
-            </div>
-        </button>
-        <button id="checkout" class="w-full bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md transform active:scale-95">Submit via WhatsApp</button>
+        
+        <div class="flex gap-2">
+            <button id="reset-cart" class="flex-1 bg-pink-600 text-white rounded-lg py-3 font-semibold hover:bg-red-600 transition-colors duration-300 shadow-md transform active:scale-95">
+                <div class="flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                    <span>Reset</span>
+                </div>
+            </button>
+            <button id="checkout" class="flex-1 bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md transform active:scale-95">
+                Submit
+            </button>
+        </div>
       </div>
     </aside>
 
