@@ -99,7 +99,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Suit</h4>
           <p class="text-pink-500 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Suit" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -108,7 +108,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv.0</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv.0" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -117,7 +117,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie gacoan Lv. 1</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie gacoan Lv. 1" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -126,7 +126,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-0">Mie Gacoan Lv. 2</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv. 2" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -135,7 +135,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 3</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv. 3" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -144,7 +144,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 4</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv. 4" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -153,7 +153,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 6</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-1 text-pink-600">Rp 12.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv. 6" data-price="12000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -162,7 +162,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 8</h4>
           <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 12.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv. 8" data-price="12000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -171,7 +171,7 @@
           <h4 class="font-bold text-l text-gray-900 mt-1">Mie Hompimpa Lv.1</h4>
           <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv.1" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -180,7 +180,7 @@
           <h4 class="font-bold text-l text-gray-900 mt-2">Mie Hompimpa Lv.2</h4>
           <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv.2" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -189,7 +189,7 @@
           <h4 class="font-bold text-l text-gray-900 mt-2">Mie Hompimpa Lv. 3</h4>
           <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv. 3" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -198,7 +198,7 @@
           <h4 class="font-bold text-l text-gray-900 mt-2">Mie Hompimpa Lv. 4</h4>
           <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv. 4" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -207,7 +207,7 @@
           <h4 class="font-bold text-l text-gray-900 mt-2">Mie Hompimpa Lv. 6</h4>
           <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 12.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv. 6" data-price="12000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -216,7 +216,7 @@
           <h4 class="font-bold text-l text-gray-900 mt-2">Mie Hompimpa Lv. 8</h4>
           <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 12.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv. 8" data-price="12000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -229,7 +229,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Udang Keju</h4>
           <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Udang Keju" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -238,7 +238,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Udang Rambutan</h4>
           <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Udang Rambutan" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -247,7 +247,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Lumpia Udang</h4>
           <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Lumpia Udang" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -256,7 +256,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Siomay Ayam</h4>
           <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Siomay Ayam" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -265,7 +265,7 @@
           <h4 class="font-bold text-lg text-gray-900 mt-2">Pangsit Goreng</h4>
           <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Pangsit Goreng" data-price="11000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -278,7 +278,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Gobak Sodor</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Gobak Sodor" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -287,7 +287,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Petak Umpet</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Petak Umpet" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -295,8 +295,8 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Teklek</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Teklek" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -304,8 +304,8 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Sluku Bathok</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Sluku Bathok" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -313,8 +313,8 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Green Thai Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Green Thai Tea" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -322,8 +322,8 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Thai Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>  
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Thai Tea" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -331,8 +331,8 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Lemon Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Lemon Tea" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -340,8 +340,8 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>      
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 5.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Tea" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -349,8 +349,8 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Coklat</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Coklat" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -358,8 +358,8 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Vanilla Late</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Vanilla Late" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -367,8 +367,8 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Teh Tarik</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Teh Tarik" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -376,8 +376,8 @@
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Air Mineral</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
-          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative">
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 5.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Air Mineral" data-price="10000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -391,25 +391,35 @@
       
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-xl pb-0 font-bold text-gray-800">🛒 List Pesanan</h2>
-        <button id="cart-close" class="text-gray-600 hover:text-gray-900 md:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+        <div class="flex items-center gap-2">
+            <button id="cart-close" class="text-gray-600 hover:text-gray-900 md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+        </div>
       </div>
 
       <div class="flex-grow overflow-y-auto pr-2">
           <ul id="cart" class="space-y-4 text-sm text-gray-700">
-            <li class="text-gray-400 italic text-center py-4">pesanan anda belum anda</li>
+            <li class="text-gray-400 italic text-center py-4">pesanan anda belum ada</li>
           </ul>
       </div>
 
-      <div class="border-t-2 border-pink-600 mt-6 pt-6">
+      <div class="border-t-2 border-pink-600 mt-6 pt-6 flex flex-col gap-4">
         <div class="flex justify-between items-center font-bold text-lg">
             <span>Total:</span>
             <span id="total" class="text-green-600">Rp 0</span>
         </div>
-        <button id="checkout" class="w-full mt-6 bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md transform active:scale-95">Submit via WhatsApp</button>
+        <button id="reset-cart" class="w-full bg-pink-500 text-white rounded-lg py-2 font-semibold hover:bg-red-600 transition-colors duration-300 shadow-md transform active:scale-95">
+            <div class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+                <span>Reset Pesanan</span>
+            </div>
+        </button>
+        <button id="checkout" class="w-full bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md transform active:scale-95">Submit via WhatsApp</button>
       </div>
     </aside>
 
@@ -431,9 +441,13 @@
   const cartCloseBtn = document.getElementById("cart-close");
   const cartItemCount = document.getElementById("cart-item-count");
   const cartOverlay = document.getElementById("cart-overlay");
+  const resetButton = document.getElementById("reset-cart");
 
   let totalHarga = 0;
   let totalItems = 0;
+  
+  // Menggunakan Map untuk menyimpan data pesanan
+  const pesanan = new Map();
 
   function updateTotalDisplay() {
     totalEl.innerText = "Rp " + totalHarga.toLocaleString("id-ID");
@@ -442,28 +456,26 @@
   }
 
   function ensureEmptyTextRemoved() {
-    if (cart.children.length === 1 && cart.children[0].classList.contains("text-gray-400")) {
-      cart.innerHTML = "";
+    const emptyText = cart.querySelector(".text-gray-400");
+    if (emptyText) {
+      emptyText.remove();
     }
   }
 
-  // Fungsi baru untuk mencari tombol yang sesuai dengan item di keranjang
-  function findButtonForCartItem(itemName) {
-    const allCards = document.querySelectorAll(".bg-white.rounded-2xl");
-    for (const card of allCards) {
-      const cardItemName = card.querySelector("h4").innerText.trim();
-      if (cardItemName === itemName) {
-        return card.querySelector(".add-to-cart");
-      }
+  function findButtonByItemName(itemName) {
+    const buttons = document.querySelectorAll('.add-to-cart');
+    for (const button of buttons) {
+        if (button.dataset.name === itemName) {
+            return button;
+        }
     }
     return null;
   }
 
-  // Fungsi baru untuk memperbarui kuantitas di tombol
-  function updateButtonQty(item, qty) {
-    const targetButton = findButtonForCartItem(item);
-    if (targetButton) {
-      const qtyBtnSpan = targetButton.querySelector(".qty-btn");
+  function updateButtonQty(itemName, qty) {
+    const button = findButtonByItemName(itemName);
+    if (button) {
+      const qtyBtnSpan = button.querySelector(".qty-btn");
       if (qty > 0) {
         qtyBtnSpan.innerText = qty;
         qtyBtnSpan.style.display = 'flex';
@@ -474,105 +486,130 @@
     }
   }
 
-  function tambahKeKeranjang(item, harga) {
-    ensureEmptyTextRemoved();
-
-    let existing = [...cart.children].find(li => li.dataset.item === item);
-    let newQty;
-
-    if (existing) {
-      let qtySpan = existing.querySelector(".qty");
-      let qty = parseInt(qtySpan.innerText, 10);
-      qty++;
-      newQty = qty;
-      qtySpan.innerText = qty;
-      totalHarga += harga;
-      totalItems++;
+  function renderCart() {
+    cart.innerHTML = '';
+    if (pesanan.size === 0) {
+      cart.innerHTML = `<li class="text-gray-400 italic text-center py-4">pesanan anda belum ada</li>`;
     } else {
-      const li = document.createElement("li");
-      li.dataset.item = item;
-      li.dataset.harga = harga;
-      li.classList.add("flex", "justify-between", "items-center", "gap-2", "cart-item-animate");
+      pesanan.forEach((data, item) => {
+        const li = document.createElement("li");
+        li.dataset.item = item;
+        li.classList.add("flex", "justify-between", "items-center", "gap-2", "cart-item-animate");
+        li.innerHTML = `
+          <span class="text-sm">${item}</span>
+          <div class="flex items-center gap-2">
+            <button class="minus bg-gray-200 px-2 rounded transform transition-transform duration-150 active:scale-95">-</button>
+            <span class="qty px-2">${data.qty}</span>
+            <button class="plus bg-gray-200 px-2 rounded transform transition-transform duration-150 active:scale-95">+</button>
+            <span class="harga text-sm">Rp ${(data.qty * data.price).toLocaleString("id-ID")}</span>
+            <button class="hapus text-pink-500 hover:text-pink-700 transform transition-transform duration-150 active:scale-95">❌</button>
+          </div>
+        `;
 
-      li.innerHTML = `
-        <span class="text-sm">${item}</span>
-        <div class="flex items-center gap-2">
-          <button class="minus bg-gray-200 px-2 rounded transform transition-transform duration-150 active:scale-95">-</button>
-          <span class="qty px-2">1</span>
-          <button class="plus bg-gray-200 px-2 rounded transform transition-transform duration-150 active:scale-95">+</button>
-          <span class="harga text-sm">Rp ${harga.toLocaleString("id-ID")}</span>
-          <button class="hapus text-pink-500 hover:text-pink-700 transform transition-transform duration-150 active:scale-95">❌</button>
-        </div>
-      `;
-
-      li.querySelector(".plus").addEventListener("click", () => {
-        let qtySpan = li.querySelector(".qty");
-        let qty = parseInt(qtySpan.innerText, 10);
-        qty++;
-        qtySpan.innerText = qty;
-        totalHarga += harga;
-        totalItems++;
-        updateTotalDisplay();
-        updateButtonQty(item, qty);
-      });
-
-      li.querySelector(".minus").addEventListener("click", () => {
-        let qtySpan = li.querySelector(".qty");
-        let qty = parseInt(qtySpan.innerText, 10);
-        if (qty > 1) {
-          qty--;
-          qtySpan.innerText = qty;
-          totalHarga -= harga;
-          totalItems--;
+        li.querySelector(".plus").addEventListener("click", () => {
+          data.qty++;
+          totalHarga += data.price;
+          totalItems++;
           updateTotalDisplay();
-          updateButtonQty(item, qty);
-        }
-      });
-
-      li.querySelector(".hapus").addEventListener("click", () => {
-        li.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
-        li.style.opacity = '0';
-        li.style.transform = 'translateX(20px)';
-        
-        li.addEventListener('transitionend', () => {
-            let qty = parseInt(li.querySelector(".qty").innerText, 10);
-            totalHarga -= harga * qty;
-            totalItems -= qty;
-            if (totalHarga < 0) totalHarga = 0;
-            if (totalItems < 0) totalItems = 0;
-            li.remove();
-            updateTotalDisplay();
-            updateButtonQty(item, 0); // Reset kuantitas di tombol
-
-            if (cart.children.length === 0) {
-              cart.innerHTML = `<li class="text-gray-400 italic text-center py-4">Keranjang Anda kosong</li>`;
-            }
+          li.querySelector(".qty").innerText = data.qty;
+          li.querySelector(".harga").innerText = `Rp ${(data.qty * data.price).toLocaleString("id-ID")}`;
+          updateButtonQty(item, data.qty);
         });
-      });
 
-      cart.appendChild(li);
-      totalHarga += harga;
-      totalItems++;
-      newQty = 1;
+        li.querySelector(".minus").addEventListener("click", () => {
+          if (data.qty > 1) {
+            data.qty--;
+            totalHarga -= data.price;
+            totalItems--;
+            updateTotalDisplay();
+            li.querySelector(".qty").innerText = data.qty;
+            li.querySelector(".harga").innerText = `Rp ${(data.qty * data.price).toLocaleString("id-ID")}`;
+            updateButtonQty(item, data.qty);
+          } else {
+            removeCartItem(item, li);
+          }
+        });
+
+        li.querySelector(".hapus").addEventListener("click", () => {
+          removeCartItem(item, li);
+        });
+
+        cart.appendChild(li);
+      });
     }
-    
+  }
+
+  function removeCartItem(item, li) {
+    const data = pesanan.get(item);
+    totalHarga -= data.qty * data.price;
+    totalItems -= data.qty;
+    pesanan.delete(item);
     updateTotalDisplay();
-    updateButtonQty(item, newQty);
+    updateButtonQty(item, 0);
+
+    li.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+    li.style.opacity = '0';
+    li.style.transform = 'translateX(20px)';
+    
+    li.addEventListener('transitionend', () => {
+        li.remove();
+        if (pesanan.size === 0) {
+            cart.innerHTML = `<li class="text-gray-400 italic text-center py-4">Keranjang Anda kosong</li>`;
+        }
+    }, { once: true });
   }
 
   // Event listener untuk tombol 'Tambah'
   addButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      const card = btn.closest(".flex.flex-col");
-      const item = card.querySelector("h4").innerText.trim();
-      const hargaText = card.querySelector("p.font-bold").innerText;
-      const harga = parseInt(hargaText.replace(/[^\d]/g, ""), 10);
-      tambahKeKeranjang(item, harga);
+      const item = btn.dataset.name;
+      const harga = parseInt(btn.dataset.price);
+
+      if (pesanan.has(item)) {
+        const data = pesanan.get(item);
+        data.qty++;
+        pesanan.set(item, data);
+      } else {
+        pesanan.set(item, { qty: 1, price: harga });
+      }
+
+      totalHarga += harga;
+      totalItems++;
+      updateTotalDisplay();
+      updateButtonQty(item, pesanan.get(item).qty);
     });
+  });
+
+  // Fungsi untuk mereset semua pesanan
+  function resetAllOrders() {
+    // Reset data
+    pesanan.clear();
+    totalHarga = 0;
+    totalItems = 0;
+    
+    // Reset tampilan
+    updateTotalDisplay();
+    cart.innerHTML = `<li class="text-gray-400 italic text-center py-4">pesanan anda belum ada</li>`;
+
+    // Reset qty di setiap tombol menu
+    const allButtons = document.querySelectorAll('.add-to-cart');
+    allButtons.forEach(button => {
+        const qtyBtnSpan = button.querySelector(".qty-btn");
+        qtyBtnSpan.innerText = '0';
+        qtyBtnSpan.style.display = 'none';
+    });
+  }
+
+  // Event listener untuk tombol reset
+  resetButton.addEventListener('click', () => {
+    if (confirm("Apakah Anda yakin ingin menghapus semua pesanan?")) {
+        resetAllOrders();
+    }
   });
 
   // Event listener untuk tombol pop-up keranjang
   cartToggleBtn.addEventListener("click", () => {
+    renderCart();
     cartSection.classList.remove("translate-x-full");
     cartOverlay.classList.remove("hidden");
   });
@@ -590,7 +627,7 @@
   });
 
   checkoutBtn.addEventListener("click", () => {
-    if (cart.children.length === 1 && cart.children[0].classList.contains("text-gray-400")) {
+    if (pesanan.size === 0) {
       alert("Keranjang masih kosong!");
       return;
     }
@@ -608,10 +645,8 @@
     pesan += `📦 Tipe Pesanan: ${tipePesananBold}%0A%0A`;
     pesan += `🍜 *Daftar Pesanan:*%0A`;
     
-    [...cart.children].forEach(li => {
-      const item = li.dataset.item;
-      const qty = Number(li.querySelector(".qty").innerText);
-      pesan += `- ${item}   ➡️   ${qty}%0A`;
+    pesanan.forEach((data, item) => {
+        pesan += `- ${item}   ➡️   ${data.qty} pcs%0A`;
     }); 
     pesan += `%0A────────────────────────%0A`;
     pesan += `💸 *Total:* ${totalEl.innerText}%0A`;
