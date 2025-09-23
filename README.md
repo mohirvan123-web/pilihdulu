@@ -50,27 +50,27 @@
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col font-sans">
 
-  <header class="bg-blue-600 rounded-xl text-white p-1 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold tracking-wide">Gacoan Jakarta</h1>
-      <button id="cart-toggle" class="relative transform transition-transform duration-150 active:scale-95">
-        <svg id="cart-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.102 1.743.707 1.743H18a2 2 0 002-2V7.786" />
-        </svg>
-        <span id="cart-item-count" class="absolute -top-1 -right-1 bg-white text-pink-600 rounded-full text-xs w-4 h-4 flex items-center justify-center font-bold" style="display:none;">0</span>
-      </button>
+  <header class="bg-blue-600 rounded-xl text-white py-2 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+      <div class="flex justify-between items-center w-full mb-2 md:mb-0 md:w-auto">
+        <h1 class="text-2xl font-bold tracking-wide">Gacoan Jakarta</h1>
+        <button id="cart-toggle" class="relative transform transition-transform duration-150 active:scale-95 md:hidden">
+          <svg id="cart-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.102 1.743.707 1.743H18a2 2 0 002-2V7.786" />
+          </svg>
+          <span id="cart-item-count" class="absolute -top-1 -right-1 bg-white text-pink-600 rounded-full text-xs w-4 h-4 flex items-center justify-center font-bold" style="display:none;">0</span>
+        </button>
+      </div>
+
+      <nav class="w-full">
+        <ul class="flex justify-around items-center space-x-4 overflow-x-auto whitespace-nowrap md:justify-center">
+          <li><a href="#noodle-section" class="text-white font-semibold px-4 py-2 rounded-full hover:bg-white/20 transition-colors duration-200">🍜 Noodle</a></li>
+          <li><a href="#dimsum-section" class="text-white font-semibold px-4 py-2 rounded-full hover:bg-white/20 transition-colors duration-200">🥟 Dimsum</a></li>
+          <li><a href="#beverage-section" class="text-white font-semibold px-4 py-2 rounded-full hover:bg-white/20 transition-colors duration-200">🥤 Beverage</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
-
-  <nav class="bg-white sticky top-12 z-40 shadow-sm md:shadow-md p-2">
-    <div class="container mx-auto">
-      <ul class="flex justify-around items-center space-x-4 overflow-x-auto whitespace-nowrap md:justify-center">
-        <li><a href="#noodle-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🍜 Noodle</a></li>
-        <li><a href="#dimsum-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🥟 Dimsum</a></li>
-        <li><a href="#beverage-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🥤 Beverage</a></li>
-      </ul>
-    </div>
-  </nav>
 
   <main class="flex-1 container mx-auto p-4 flex flex-col md:flex-row gap-8">
     <section class="flex-1">
