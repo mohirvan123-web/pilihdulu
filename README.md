@@ -65,9 +65,9 @@
   <nav class="bg-white sticky top-10 z-40 shadow-sm md:shadow-md p-2">
     <div class="container mx-auto">
       <ul class="flex justify-around items-center space-x-4 overflow-x-auto whitespace-nowrap md:justify-center">
-        <li><a href="#noodle-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200 sticky">🍜 Noodle</a></li>
-        <li><a href="#dimsum-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200 sticky">🥟 Dimsum</a></li>
-        <li><a href="#beverage-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200 sticky">🥤 Beverage</a></li>
+        <li><a href="#noodle-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🍜 Noodle</a></li>
+        <li><a href="#dimsum-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🥟 Dimsum</a></li>
+        <li><a href="#beverage-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🥤 Beverage</a></li>
       </ul>
     </div>
   </nav>
@@ -93,7 +93,7 @@
         </div>
       </div>
 
-      <h3 id="noodle-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0">🍜 Noodle</h3>
+      <h3 id="noodle-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0 pt-4 md:pt-8 -mt-4 md:-mt-8">🍜 Noodle</h3>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Suit</h4>
@@ -223,7 +223,7 @@
         </div>
       </div>
       
-      <h3 id="dimsum-section" class="text-3xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0">🥟 Dimsum</h3>
+      <h3 id="dimsum-section" class="text-3xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0 pt-4 md:pt-8 -mt-4 md:-mt-8">🥟 Dimsum</h3>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.09]">
           <h4 class="font-bold text-lg text-gray-900 mt-2">Udang Keju</h4>
@@ -272,7 +272,7 @@
         </div>
       </div>
 
-      <h3 id="beverage-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0">🥤 Beverage</h3>
+      <h3 id="beverage-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0 pt-4 md:pt-8 -mt-4 md:-mt-8">🥤 Beverage</h3>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Gobak Sodor</h4>
@@ -667,4 +667,3 @@
 
 </body>
 </html>
-C
