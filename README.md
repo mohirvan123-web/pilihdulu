@@ -658,7 +658,7 @@
     pesan += `────────────────────────%0A%0A`;
     pesan += `Terima kasih 🙏, pesanan Anda akan segera diproses.`;
 
-    const noWA = "628991190404";
+    const noWA = "6283187982993";
     const url = `https://api.whatsapp.com/send?phone=${noWA}&text=${pesan}`;
 
     window.open(url, "_blank", "noopener,noreferrer");
