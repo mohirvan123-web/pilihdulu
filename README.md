@@ -62,7 +62,7 @@
     </div>
   </header>
 
-  <nav class="bg-pink-100 sticky top-33 z-40 shadow-sm md:shadow-md p-2">
+  <nav class="bg-white sticky top-12 z-40 shadow-sm md:shadow-md p-2">
     <div class="container mx-auto">
       <ul class="flex justify-around items-center space-x-4 overflow-x-auto whitespace-nowrap md:justify-center">
         <li><a href="#noodle-section" class="text-gray-800 font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-200">🍜 Noodle</a></li>
