@@ -296,7 +296,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Teklek</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Teklek" data-price="10000">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Teklek" data-price="7000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -305,7 +305,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Es Sluku Bathok</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Sluku Bathok" data-price="10000">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Sluku Bathok" data-price="7000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -314,7 +314,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Green Thai Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Green Thai Tea" data-price="10000">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Green Thai Tea" data-price="9000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -323,7 +323,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Thai Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>  
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Thai Tea" data-price="10000">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Thai Tea" data-price="9000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -332,7 +332,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Lemon Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Lemon Tea" data-price="10000">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Lemon Tea" data-price="7000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -341,7 +341,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Tea</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>      
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 5.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Tea" data-price="10000">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Tea" data-price="5000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -350,7 +350,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Coklat</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Coklat" data-price="10000">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Coklat" data-price="9000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -359,7 +359,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Vanilla Late</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Vanilla Late" data-price="10000">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Vanilla Late" data-price="9000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -368,7 +368,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Teh Tarik</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.500</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Teh Tarik" data-price="10000">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Teh Tarik" data-price="7500">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
@@ -377,7 +377,7 @@
            <h4 class="font-bold text-lg text-gray-900 mt-2">Air Mineral</h4>
           <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
           <p class="font-bold text-lg mt-2 text-pink-600">Rp 5.000</p>
-          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Air Mineral" data-price="10000">
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Air Mineral" data-price="5000">
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
