@@ -441,12 +441,12 @@
     © 2025 Pilih Menu Online
   </footer>
 
-  <script>
+    <script>
   const cart = document.getElementById("cart");
   const totalEl = document.getElementById("total");
   const checkoutBtn = document.getElementById("checkout");
   const orderType = document.getElementById("orderType");
-  const paymentMethod = document.getElementById("paymentMethod"); // New variable
+  const paymentMethod = document.getElementById("paymentMethod");
   const customerName = document.getElementById("customerName");
   const addButtons = document.querySelectorAll(".add-to-cart");
   const cartToggleBtn = document.getElementById("cart-toggle");
@@ -590,6 +590,7 @@
       totalItems++;
       updateTotalDisplay();
       updateButtonQty(item, pesanan.get(item).qty);
+      renderCart();
     });
   });
 
