@@ -90,6 +90,13 @@
                     <option value="Take Away">Take Away</option>
                 </select>
             </div>
+            <div>
+                <label class="block text-sm font-semibold mb-2">Metode Pembayaran:</label>
+                <select id="paymentMethod" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors">
+                    <option value="Cash">Cash</option>
+                    <option value="QRIS">QRIS</option>
+                </select>
+            </div>
         </div>
       </div>
 
@@ -439,6 +446,7 @@
   const totalEl = document.getElementById("total");
   const checkoutBtn = document.getElementById("checkout");
   const orderType = document.getElementById("orderType");
+  const paymentMethod = document.getElementById("paymentMethod"); // New variable
   const customerName = document.getElementById("customerName");
   const addButtons = document.querySelectorAll(".add-to-cart");
   const cartToggleBtn = document.getElementById("cart-toggle");
@@ -645,9 +653,11 @@
     }
 
     const tipePesananBold = `*${orderType.value}*`;
+    const metodePembayaran = `*${paymentMethod.value}*`;
     let pesan = `🔔 Pesanan Baru 🔔%0A%0A`;
     pesan += `👤 Nama: ${nama}%0A`;
-    pesan += `📦 Tipe Pesanan: ${tipePesananBold}%0A%0A`;
+    pesan += `📦 Tipe Pesanan: ${tipePesananBold}%0A`;
+    pesan += `💰 Metode Pembayaran: ${metodePembayaran}%0A%0A`;
     pesan += `🍜 *Daftar Pesanan:*%0A`;
     
     pesanan.forEach((data, item) => {
