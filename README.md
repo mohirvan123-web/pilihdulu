@@ -657,7 +657,6 @@
     let pesan = `🔔 Pesanan Baru 🔔%0A%0A`;
     pesan += `👤 Nama: ${nama}%0A`;
     pesan += `📦 Tipe Pesanan: ${tipePesananBold}%0A`;
-    pesan += `💰 Metode Pembayaran: ${metodePembayaran}%0A%0A`;
     pesan += `🍜 *Daftar Pesanan:*%0A`;
     
     pesanan.forEach((data, item) => {
@@ -666,6 +665,7 @@
     pesan += `%0A────────────────────────%0A`;
     pesan += `💸 *Total:* ${totalEl.innerText}%0A`;
     pesan += `────────────────────────%0A%0A`;
+    pesan += `💰 Metode Pembayaran: ${metodePembayaran}%0A%0A`;
     pesan += `Terima kasih 🙏, pesanan Anda akan segera diproses.`;
 
     const noWA = "6283187982993";
