@@ -370,6 +370,15 @@
             Tambah
             <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
           </button>
+          </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Orange</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 6.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Vanilla Late" data-price="6000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
            <h4 class="font-bold text-lg text-gray-900 mt-2">Teh Tarik</h4>
