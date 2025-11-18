@@ -1,663 +1,680 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" style="scroll-behavior: smooth;">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thawing Reminder - Alarm Agresif & Persistent (MLGJAK)</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* ==================== 
-           CSS: REVISI STYLING & RESPONSIVITAS 
-           ==================== */
-        :root {
-            --color-white: #ffffff;
-            --color-light-bg: #f7f9ff; /* Background sangat pucat */
-            --color-primary-blue: #4A90E2; /* Biru Primer */
-            --color-accent-pink: #FF69B4; /* Hot Pink */
-            --color-text-dark: #333333;
-            --color-warning: #FFC0CB; /* Soft Pink untuk warning */
-            --color-alert: #DC3545; /* Merah untuk alarm */
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--color-light-bg);
-            min-height: 100vh;
-            margin: 0; 
-            padding: 20px 10px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            transition: background-color 0.2s; 
-            color: var(--color-text-dark);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Datang di Gacoan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Transisi untuk keranjang pop-up */
+    .cart-drawer {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        .main-container {
-            background-color: var(--color-white);
-            padding: 30px;
-            border-radius: 16px; /* Lebih modern */
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Shadow yang halus */
-            text-align: center;
-            width: 100%;
-            max-width: 850px; /* Lebar lebih besar untuk 2 kolom */
-            box-sizing: border-box; 
-        }
+    /* Keyframe untuk animasi slide-in pada item keranjang */
+    @keyframes slideInFromTop {
+      0% {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 
-        h1 {
-            color: var(--color-primary-blue);
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
+    .cart-item-animate {
+      animation: slideInFromTop 0.3s ease-out;
+    }
 
-        p {
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 0.9em;
-        }
+    /* Keyframe untuk animasi shake pada ikon keranjang */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0) scale(1); }
+      20%, 60% { transform: translateX(-5px) scale(1.1); }
+      40%, 80% { transform: translateX(5px) scale(1.1); }
+    }
+    .shake-animation {
+      animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+    }
+  
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      80% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
 
-        .timer-list {
-            /* Tampilan 2 Kolom Default (untuk tablet ke atas) */
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .timer-card {
-            border: 1px solid #e0e0e0;
-            padding: 20px;
-            border-radius: 12px;
-            background-color: var(--color-white);
-            transition: all 0.3s;
-            text-align: center; /* Konten di tengah */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        .timer-card h2 {
-            color: var(--color-accent-pink); /* Nama item pakai Pink */
-            padding-bottom: 5px;
-            font-size: 1.3em;
-            font-weight: 600;
-        }
-
-        .countdown-display {
-            font-size: 2.5em; /* Lebih besar */
-            margin: 15px 0;
-            padding: 10px 0;
-            font-weight: 700;
-            color: var(--color-primary-blue);
-            background: none; /* Hilangkan background default */
-        }
-
-        .alarm-message {
-            color: var(--color-alert);
-            font-weight: 600;
-            margin-top: 10px;
-            font-size: 0.95em;
-        }
-
-        .timer-controls {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .timer-controls label {
-            font-weight: 400;
-            white-space: nowrap;
-        }
-        
-        .timer-controls input {
-            padding: 10px 5px;
-            max-width: 60px; 
-            text-align: center; 
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1em;
-        }
-
-        .timer-controls button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            flex-grow: 1; 
-            transition: background-color 0.2s, transform 0.1s;
-        }
-        .timer-controls button:active { transform: scale(0.98); }
-
-        .start-btn { 
-            background-color: var(--color-primary-blue); 
-            color: white; 
-        }
-        .start-btn:hover { background-color: #387ad1; }
-        
-        .reset-btn { 
-            background-color: var(--color-alert); /* Reset pakai warna merah/pink */
-            color: white; 
-        }
-        .reset-btn:hover { background-color: #b82c3c; }
-
-        /* --- STATE ALERT CSS --- */
-
-        /* WARNING (15 Menit) - Menggunakan Soft Pink dan Biru Tua */
-        .timer-card.warning {
-            border-color: var(--color-warning);
-            box-shadow: 0 0 10px rgba(255, 192, 203, 0.5);
-            background-color: #fffafa;
-        }
-        .timer-card.warning .countdown-display {
-            color: var(--color-primary-blue); 
-            animation: pulse-warn 1s infinite alternate; 
-        }
-        .timer-card.warning h2 { color: var(--color-primary-blue); }
-
-        /* ALERT (Waktu Habis) - Menggunakan Hot Pink Agresif */
-        .timer-card.alert {
-            border-color: var(--color-alert);
-            background-color: #ffeff3;
-            box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
-        }
-        .timer-card.alert .countdown-display {
-            color: var(--color-alert); 
-            font-size: 2.2em;
-            animation: none;
-        }
-        
-        /* ALARM GLOBAL AGRESIF (Flash Body) */
-        .flash-alarm-red {
-            background-color: #ff4d6d !important; /* Pink Agresif */
-            transition: background-color 0.2s; 
-        }
-
-        /* ANIMASI */
-        @keyframes pulse-warn {
-            from { transform: scale(1); opacity: 1; }
-            to { transform: scale(1.01); opacity: 0.9; }
-        }
-
-        /* MEDIA QUERY - OPTIMALISASI MOBILE & TABLET */
-        
-        /* Tablet/Small Desktop - Pertahankan 2 kolom */
-        @media (min-width: 651px) and (max-width: 850px) {
-            .main-container { padding: 20px; }
-        }
-
-        /* Mobile View - Paksakan 1 kolom */
-        @media (max-width: 650px) {
-            body { padding: 10px 0; }
-            .main-container { padding: 15px; border-radius: 0; box-shadow: none; max-width: 100%;}
-            
-            /* Ubah ke 1 kolom */
-            .timer-list { 
-                grid-template-columns: 1fr; 
-                gap: 15px; 
-            } 
-            
-            .timer-card { padding: 15px; }
-            h1 { font-size: 1.8em; }
-            p { font-size: 0.8em; }
-            
-            .timer-card h2 { font-size: 1.2em; }
-            .countdown-display { font-size: 2em; margin: 10px 0; }
-            
-            /* Kontrol: Input dan Tombol berbaris vertikal */
-            .timer-controls { 
-                flex-wrap: wrap; 
-                gap: 8px; 
-                justify-content: space-between;
-            }
-            
-            .timer-controls label { 
-                flex-basis: 100%; /* Label ambil 1 baris */
-                text-align: left;
-                font-size: 0.9em;
-            }
-            .timer-controls input { 
-                max-width: 80px; 
-                flex-grow: 0;
-            }
-            /* Tombol START/RESET bagi rata 50% */
-            .timer-controls button { 
-                padding: 10px; 
-                font-size: 0.9em; 
-                flex-basis: calc(50% - 5px); 
-            }
-        }
-    </style>
-    
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    .qty-btn {
+      animation: popIn 0.2s ease-out;
+    }
+  </style>
 </head>
-<body>
-    <div class="main-container">
-        <h1>Timer Thawing Reminder 🧊 (SHARED)</h1>
-        <p>Status timer disinkronkan secara real-time. UI Modern: Biru & Pink.</p>
-        
-        <div class="timer-list" id="timer-list">
-            </div>
+<body class="bg-gray-100 min-h-screen flex flex-col font-sans">
+
+  <header class="bg-blue-600 rounded-xl text-white py-2 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+      <div class="flex justify-between items-center w-full mb-2 md:mb-0 md:w-auto">
+        <h1 class="text-2xl font-bold tracking-wide">Gacoan Jakarta</h1>
+        <button id="cart-toggle" class="relative transform transition-transform duration-150 active:scale-95 md:hidden">
+          <svg id="cart-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.102 1.743.707 1.743H18a2 2 0 002-2V7.786" />
+          </svg>
+          <span id="cart-item-count" class="absolute -top-1 -right-1 bg-white text-pink-600 rounded-full text-xs w-4 h-4 flex items-center justify-center font-bold" style="display:none;">0</span>
+        </button>
+      </div>
+
+      <nav class="w-full">
+        <ul class="flex justify-around items-center space-x-4 overflow-x-auto whitespace-nowrap md:justify-center">
+          <li><a href="#noodle-section" class="text-white font-semibold px-4 py-2 rounded-full hover:bg-white/20 transition-colors duration-200">🍜 Noodle</a></li>
+          <li><a href="#dimsum-section" class="text-white font-semibold px-4 py-2 rounded-full hover:bg-white/20 transition-colors duration-200">🥟 Dimsum</a></li>
+          <li><a href="#beverage-section" class="text-white font-semibold px-4 py-2 rounded-full hover:bg-white/20 transition-colors duration-200">🥤 Beverage</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <main class="flex-1 container mx-auto p-4 flex flex-col md:flex-row gap-8">
+    <section class="flex-1">
+      <h2 class="text-3xl font-bold mb-3 text-gray-800 border-b-2 border-pink-500 pb-2">SELAMAT DATANG DI GACOAN</h2>
+
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8 border-t-4 border-blue-600">
+        <h3 class="text-xl font-bold mb-4 text-gray-800">Detail Pesanan</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label class="block text-sm font-semibold mb-2">Nama Pelanggan:</label>
+                <input id="customerName" type="text" placeholder="Masukkan nama Anda" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors" />
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-2">Pilih Tipe Pesanan:</label>
+                <select id="orderType" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors">
+                    <option value="Dine In">Dine In</option>
+                    <option value="Take Away">Take Away</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-2">Metode Pembayaran:</label>
+                <select id="paymentMethod" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500 transition-colors">
+                    <option value="Cash">Cash</option>
+                    <option value="QRIS">QRIS</option>
+                </select>
+            </div>
+        </div>
+      </div>
+
+      <h3 id="noodle-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0 pt-4 md:pt-8 -mt-4 md:-mt-8">🍜 Noodle</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Suit</h4>
+          <p class="text-pink-500 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Suit" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv.0</h4>
+          <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv.0" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Mie gacoan Lv. 1</h4>
+          <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie gacoan Lv. 1" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-0">Mie Gacoan Lv. 2</h4>
+          <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv. 2" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 3</h4>
+          <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv. 3" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 4</h4>
+          <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-1 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv. 4" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 6</h4>
+          <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-1 text-pink-600">Rp 12.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv. 6" data-price="12000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Mie Gacoan Lv. 8</h4>
+          <p class="text-yellow-500 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 12.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Gacoan Lv. 8" data-price="12000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-l text-gray-900 mt-1">Mie Hompimpa Lv.1</h4>
+          <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv.1" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-l text-gray-900 mt-2">Mie Hompimpa Lv.2</h4>
+          <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv.2" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-l text-gray-900 mt-2">Mie Hompimpa Lv. 3</h4>
+          <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv. 3" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-l text-gray-900 mt-2">Mie Hompimpa Lv. 4</h4>
+          <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv. 4" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-l text-gray-900 mt-2">Mie Hompimpa Lv. 6</h4>
+          <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 12.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv. 6" data-price="12000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-l text-gray-900 mt-2">Mie Hompimpa Lv. 8</h4>
+          <p class="text-blue-400 text-sm font-semibold">NOODLE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 12.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Mie Hompimpa Lv. 8" data-price="12000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+      </div>
+      
+      <h3 id="dimsum-section" class="text-3xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0 pt-4 md:pt-8 -mt-4 md:-mt-8">🥟 Dimsum</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.09]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Udang Keju</h4>
+          <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Udang Keju" data-price="10000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Udang Rambutan</h4>
+          <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Udang Rambutan" data-price="10000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Lumpia Udang</h4>
+          <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Lumpia Udang" data-price="10000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Siomay Ayam</h4>
+          <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Siomay Ayam" data-price="10000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+          <h4 class="font-bold text-lg text-gray-900 mt-2">Pangsit Goreng</h4>
+          <p class="text-pink-600 text-sm font-semibold">DIMSUM</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 11.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Pangsit Goreng" data-price="11000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+      </div>
+
+      <h3 id="beverage-section" class="text-2xl font-bold mb-4 mt-8 text-gray-700 border-b-2 border-pink-500 pb-0 pt-4 md:pt-8 -mt-4 md:-mt-8">🥤 Beverage</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Es Gobak Sodor</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Gobak Sodor" data-price="10000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Es Petak Umpet</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 10.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Petak Umpet" data-price="10000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Es Teklek</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Teklek" data-price="7000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Es Sluku Bathok</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Es Sluku Bathok" data-price="7000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Green Thai Tea</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Green Thai Tea" data-price="9000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Thai Tea</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>  
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Thai Tea" data-price="9000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Lemon Tea</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Lemon Tea" data-price="7000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Tea</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>      
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 5.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Tea" data-price="5000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Coklat</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Coklat" data-price="9000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Vanilla Late</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 9.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Vanilla Late" data-price="9000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Teh Tarik</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 7.500</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Teh Tarik" data-price="7500">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-4 flex flex-col transform transition-transform duration-300 hover:scale-[1.02]">
+           <h4 class="font-bold text-lg text-gray-900 mt-2">Air Mineral</h4>
+          <p class="text-blue-400 text-sm font-semibold">BEVERAGE</p>
+          <p class="font-bold text-lg mt-2 text-pink-600">Rp 5.000</p>
+          <button class="add-to-cart mt-auto bg-blue-600 text-white rounded-full py-1 px-2 font-sm hover:bg-blue-700 transition-colors duration-300 transform active:scale-95 relative" data-name="Air Mineral" data-price="5000">
+            Tambah
+            <span class="qty-btn absolute -top-1 -right-1 bg-pink-500 text-white-600 rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" style="display:none;">0</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+    <aside id="cart-section" class="fixed inset-0 z-50 h-full w-full bg-white cart-drawer transform translate-x-full md:relative md:h-fit md:w-1/3 md:translate-x-0 rounded-l-2xl shadow-xl flex flex-col p-6">
+      
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl pb-0 font-bold text-gray-800">🛒 List Pesanan</h2>
+        <div class="flex items-center gap-2">
+            <button id="cart-close" class="text-gray-600 hover:text-gray-900 md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+        </div>
+      </div>
+
+      <div class="flex-grow overflow-y-auto pr-2">
+          <ul id="cart" class="space-y-4 text-sm text-gray-700">
+            <li class="text-gray-400 italic text-center py-4">pesanan anda belum ada</li>
+          </ul>
+      </div>
+
+      <div class="border-t-2 border-pink-600 mt-6 pt-6 flex flex-col gap-4">
+        <div class="flex justify-between items-center font-bold text-lg">
+            <span>Total:</span>
+            <span id="total" class="text-green-600">Rp 0</span>
+        </div>
+        
+        <div class="flex gap-2">
+            <button id="reset-cart" class="flex-1 bg-pink-600 text-white rounded-lg py-3 font-semibold hover:bg-red-600 transition-colors duration-300 shadow-md transform active:scale-95">
+                <div class="flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                    <span>Reset</span>
+                </div>
+            </button>
+            <button id="checkout" class="flex-1 bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md transform active:scale-95">
+                Submit
+            </button>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="bg-gray-200 text-center p-4 text-sm text-gray-600 mt-8">
+    © 2025 Pilih Menu Online
+  </footer>
 
     <script>
-       // ===================================
-        // FIREBASE CONFIGURATION (Biarkan tidak berubah)
-        // ===================================
-        const firebaseConfig = {
-          apiKey: "AIzaSyBtUlghTw806GuGuwOXGNgoqN6Rkcg0IMM",
-          authDomain: "thawing-ec583.firebaseapp.com",
-          databaseURL: "https://thawing-ec583-default-rtdb.asia-southeast1.firebasedatabase.app",
-          projectId: "thawing-ec583",
-          storageBucket: "thawing-ec583.firebasestorage.app", 
-          messagingSenderId: "1043079332713",
-          appId: "1:1043079332713:web:6d289ad2b7c13a222bb3f8",
-          measurementId: "G-WLBFJ6V7QT"            
-        };
+  const cart = document.getElementById("cart");
+  const totalEl = document.getElementById("total");
+  const checkoutBtn = document.getElementById("checkout");
+  const orderType = document.getElementById("orderType");
+  const paymentMethod = document.getElementById("paymentMethod");
+  const customerName = document.getElementById("customerName");
+  const addButtons = document.querySelectorAll(".add-to-cart");
+  const cartToggleBtn = document.getElementById("cart-toggle");
+  const cartSection = document.getElementById("cart-section");
+  const cartCloseBtn = document.getElementById("cart-close");
+  const cartItemCount = document.getElementById("cart-item-count");
+  const cartOverlay = document.getElementById("cart-overlay");
+  const resetButton = document.getElementById("reset-cart");
 
+  let totalHarga = 0;
+  let totalItems = 0;
+  
+  // Menggunakan Map untuk menyimpan data pesanan
+  const pesanan = new Map();
 
-        // Initialize Firebase
-        try {
-            firebase.initializeApp(firebaseConfig);
-        } catch (e) {
-            console.error("Firebase Initialization Failed. Check your config.", e);
+  function updateTotalDisplay() {
+    totalEl.innerText = "Rp " + totalHarga.toLocaleString("id-ID");
+    cartItemCount.innerText = totalItems;
+    cartItemCount.style.display = totalItems > 0 ? 'flex' : 'none';
+  }
+
+  function ensureEmptyTextRemoved() {
+    const emptyText = cart.querySelector(".text-gray-400");
+    if (emptyText) {
+      emptyText.remove();
+    }
+  }
+
+  function findButtonByItemName(itemName) {
+    const buttons = document.querySelectorAll('.add-to-cart');
+    for (const button of buttons) {
+        if (button.dataset.name === itemName) {
+            return button;
         }
-        
-        // Dapatkan referensi database
-        const dbRef = firebase.database().ref('thawingTimers');
-        
-        /* ==================== 
-           JAVASCRIPT LOGIC (Hampir tidak berubah, hanya penyesuaian kelas CSS)
-           ==================== */
-        
-        // --- KONFIGURASI APLIKASI ---
-        const THAWING_ITEMS = [
-            { id: 1, name: "ADONAN", defaultTimeMinutes: 40 },
-            { id: 2, name: "ACIN", defaultTimeMinutes: 60 },
-            { id: 3, name: "MIE", defaultTimeMinutes: 120 },
-            { id: 4, name: "PENTOL", defaultTimeMinutes: 120 },
-            { id: 5, name: "SURAI NAGA", defaultTimeMinutes: 120 },
-            { id: 6, name: "KRUPUK MIE", defaultTimeMinutes: 120 },
-            { id: 7, name: "KULIT PANGSIT", defaultTimeMinutes: 120 },
-        ];
-        
-        const WARNING_TIME_SECONDS = 15 * 60; // 15 menit
+    }
+    return null;
+  }
 
-        // --- VARIABEL GLOBAL ALARM AGRESIF ---
-        let activeIntervals = {}; 
-        let audioCtx;
-        let notificationPermission = Notification.permission;
-        
-        let titleInterval = null;
-        let flashInterval = null;
-        const originalTitle = document.title;
-        const WARNING_TITLE_PREFIX = '🚨 HABIS! - ';
-        const FLASH_COLOR_CLASS = 'flash-alarm-red'; 
+  function updateButtonQty(itemName, qty) {
+    const button = findButtonByItemName(itemName);
+    if (button) {
+      const qtyBtnSpan = button.querySelector(".qty-btn");
+      if (qty > 0) {
+        qtyBtnSpan.innerText = qty;
+        qtyBtnSpan.style.display = 'flex';
+      } else {
+        qtyBtnSpan.innerText = '0';
+        qtyBtnSpan.style.display = 'none';
+      }
+    }
+  }
 
-        // Fungsi Format Waktu
-        function formatTime(totalSeconds) {
-            const hours = Math.floor(totalSeconds / 3600);
-            const minutes = Math.floor((totalSeconds % 3600) / 60);
-            const seconds = totalSeconds % 60;
+  function renderCart() {
+    cart.innerHTML = '';
+    if (pesanan.size === 0) {
+      cart.innerHTML = `<li class="text-gray-400 italic text-center py-4">pesanan anda belum ada</li>`;
+    } else {
+      pesanan.forEach((data, item) => {
+        const li = document.createElement("li");
+        li.dataset.item = item;
+        li.classList.add("flex", "justify-between", "items-center", "gap-2", "cart-item-animate");
+        li.innerHTML = `
+          <span class="text-sm">${item}</span>
+          <div class="flex items-center gap-2">
+            <button class="minus bg-gray-200 px-2 rounded transform transition-transform duration-150 active:scale-95">-</button>
+            <span class="qty px-2">${data.qty}</span>
+            <button class="plus bg-gray-200 px-2 rounded transform transition-transform duration-150 active:scale-95">+</button>
+            <span class="harga text-sm">Rp ${(data.qty * data.price).toLocaleString("id-ID")}</span>
+            <button class="hapus text-pink-500 hover:text-pink-700 transform transition-transform duration-150 active:scale-95">❌</button>
+          </div>
+        `;
 
-            const h = String(hours).padStart(2, '0');
-            const m = String(minutes).padStart(2, '0');
-            const s = String(seconds).padStart(2, '0');
-
-            return `${h}:${m}:${s}`;
-        }
-        
-        function resumeAudioContext() {
-             // Dibiarkan untuk kompatibilitas
-             if (audioCtx && audioCtx.state === 'suspended') {
-                 audioCtx.resume().catch(e => console.error("Failed to resume AudioContext:", e));
-             }
-        }
-        
-        // =================================================
-        // 🚨 FUNGSI TEXT-TO-SPEECH
-        // =================================================
-        function speakMessage(message) {
-            if ('speechSynthesis' in window) {
-                // Hentikan ucapan yang sedang berjalan
-                window.speechSynthesis.cancel(); 
-                
-                const utterance = new SpeechSynthesisUtterance(message);
-                
-                const voices = window.speechSynthesis.getVoices();
-                const indoVoice = voices.find(v => v.lang === 'id-ID' || v.lang === 'id_ID');
-                
-                if (indoVoice) {
-                    utterance.voice = indoVoice;
-                } else {
-                    utterance.lang = 'id-ID'; // Fallback
-                }
-                
-                utterance.rate = 1.0; 
-                utterance.volume = 1.0; 
-                
-                window.speechSynthesis.speak(utterance);
-            } else {
-                console.warn("Web Speech API tidak didukung. Alarm ucapan dinonaktifkan.");
-            }
-        }
-        // =================================================
-
-
-        function sendNotification(itemName) {
-            if (notificationPermission === 'granted') {
-                new Notification("⏰ WAKTU THAWING HABIS!", {
-                    body: `🚨 Segera ambil bahan: ${itemName}.`,
-                    tag: 'thawing-alarm',
-                    renotify: true, 
-                    requireInteraction: true 
-                }).onclick = function() {
-                    window.focus(); 
-                    this.close();
-                    stopAggressiveAlarm(); 
-                };
-            }
-        }
-
-        function startVibrationAlert() {
-            if ('vibrate' in navigator) {
-                const pattern = [1000, 500, 1000]; 
-                navigator.vibrate(pattern);
-            }
-        }
-
-        function startFlashAlarm() {
-            if (flashInterval) return;
-            let isFlashing = false;
-            flashInterval = setInterval(() => {
-                isFlashing = !isFlashing;
-                document.body.classList.toggle(FLASH_COLOR_CLASS, isFlashing);
-            }, 200);
-        }
-
-        function startTitleAlert(itemName) {
-            if (titleInterval) return;
-            let isAlertState = false;
-            titleInterval = setInterval(() => {
-                isAlertState = !isAlertState;
-                document.title = isAlertState 
-                    ? WARNING_TITLE_PREFIX + itemName 
-                    : originalTitle;
-            }, 800);
-        }
-
-        function stopAggressiveAlarm() {
-            if (titleInterval) {
-                clearInterval(titleInterval);
-                titleInterval = null;
-            }
-            if (flashInterval) {
-                clearInterval(flashInterval);
-                flashInterval = null;
-            }
-            document.title = originalTitle;
-            document.body.classList.remove(FLASH_COLOR_CLASS);
-            // Hentikan suara ucapan
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel(); 
-            }
-        }
-        
-        // --- LOGIKA UTAMA: FUNGSI TICK ---
-        
-        /**
-         * Fungsi tick sekarang dipicu oleh listener Firebase.
-         */
-        function tick(itemId, endTimeMs, inputMinutes) {
-            const timerCard = document.getElementById(`card-${itemId}`);
-            if (!timerCard) return;
-
-            const display = document.getElementById(`display-${itemId}`);
-            const alarmMessage = document.getElementById(`msg-${itemId}`);
-            // Gunakan find() untuk mendapatkan item yang benar, karena innerHTML h2 bisa berubah
-            const item = THAWING_ITEMS.find(i => i.id === itemId);
-            const itemName = item ? item.name : 'Bahan';
-            
-            clearTimeout(activeIntervals[itemId]);
-
-            const now = Date.now();
-            let duration = Math.floor((endTimeMs - now) / 1000); 
-            
-            // Perbarui UI Kontrol
-            const inputTime = document.getElementById(`time-input-${itemId}`);
-            const startButton = document.getElementById(`start-btn-${itemId}`);
-            const resetButton = document.getElementById(`reset-btn-${itemId}`);
-            if (inputTime) inputTime.value = inputMinutes; 
-            if (inputTime) inputTime.readOnly = true;
-            if (startButton) startButton.style.display = 'none';
-            if (resetButton) resetButton.style.display = 'block';
-
-            // 1. Update tampilan
-            if (duration >= 0) {
-                 display.textContent = formatTime(duration);
-            }
-           
-            // 2. Transisi ke mode WARNING (15 Menit)
-            if (duration <= WARNING_TIME_SECONDS && duration > 0) {
-                if (!timerCard.classList.contains('warning')) {
-                    timerCard.classList.add('warning');
-                    timerCard.classList.remove('alert'); 
-                    const remainingMinutes = Math.ceil(duration / 60);
-                    alarmMessage.textContent = `🔔 PERINGATAN! ${itemName} tersisa ${remainingMinutes} menit.`;
-                    alarmMessage.style.display = 'block';
-                }
-            } else if (duration > WARNING_TIME_SECONDS) {
-                 timerCard.classList.remove('warning');
-                 alarmMessage.style.display = 'none';
-            }
-
-            // 3. Bunyikan alarm di mode WARNING (setiap 30 detik)
-            if (duration <= WARNING_TIME_SECONDS && duration > 0 && duration % 30 === 0) {
-                const remainingMinutes = Math.ceil(duration / 60);
-                // 🚨 TTS: Peringatan 15 Menit
-                speakMessage(`Perhatian! Waktu thawing ${itemName} kurang ${remainingMinutes} menit.`); 
-            }
-            
-            // 4. Kondisi Waktu Habis: (Alarm & Hapus dari database)
-            if (duration <= 0) {
-                // Hentikan interval lokal
-                clearTimeout(activeIntervals[itemId]);
-                delete activeIntervals[itemId];
-                
-                // Hapus entry dari Firebase
-                dbRef.child(itemId).remove().catch(e => console.log('Hapus item gagal.'));
-                
-                display.textContent = "WAKTU HABIS!";
-                timerCard.classList.remove('warning');
-                timerCard.classList.add('alert'); 
-                alarmMessage.textContent = `✅ SELESAI! Bahan ${itemName} butuh penanganan.`;
-                alarmMessage.style.display = 'block';
-                
-                // --- AKTIVASI ALARM AGRESIF (Lokal di perangkat ini) ---
-                sendNotification(itemName);
-                startVibrationAlert(); 
-                startTitleAlert(itemName);
-                startFlashAlarm();
-                
-                // 🚨 TTS: Waktu Habis
-                speakMessage(`PERINGATAN KERAS! Waktu thawing ${itemName} telah habis! Segera ambil bahan!`); 
-                
-                return; 
-            }
-            
-            // 5. Jadwalkan tick berikutnya (Lokal)
-            activeIntervals[itemId] = setTimeout(() => tick(itemId, endTimeMs, inputMinutes), 1000);
-        }
-
-        // --- FUNGSI PUBLIK (Dipanggil oleh User) ---
-        
-        // FUNGSI INI MENGIRIM PERUBAHAN KE FIREBASE
-        function startCountdown(itemId) {
-            resumeAudioContext(); 
-            Notification.requestPermission().then(permission => {
-                notificationPermission = permission; 
-            });
-            
-            const timerCard = document.getElementById(`card-${itemId}`);
-            const inputTime = document.getElementById(`time-input-${itemId}`);
-            const durationMinutes = parseInt(inputTime.value);
-
-            if (isNaN(durationMinutes) || durationMinutes <= 0) {
-                alert(`Mohon masukkan waktu thawing yang valid.`);
-                return;
-            }
-            
-            const durationMs = durationMinutes * 60 * 1000;
-            const endTimeMs = Date.now() + durationMs; 
-            
-            // 🚨 LOGIKA UTAMA: TULIS KE DATABASE 
-            dbRef.child(itemId).set({ 
-                endTime: endTimeMs, 
-                inputMinutes: durationMinutes 
-            })
-            .then(() => {
-                console.log(`Timer ${itemId} started and synced.`);
-            })
-            .catch(error => {
-                alert("Gagal memulai timer. Periksa koneksi atau aturan Firebase.");
-                console.error(error);
-            });
-        }
-
-        // FUNGSI INI MENGHAPUS DATA DARI FIREBASE
-        function resetTimer(itemId) {
-            stopAggressiveAlarm(); 
-            
-            // 🚨 LOGIKA UTAMA: HAPUS DARI DATABASE
-            dbRef.child(itemId).remove()
-            .then(() => {
-                console.log(`Timer ${itemId} reset and synced.`);
-            })
-            .catch(error => {
-                alert("Gagal mereset timer. Periksa koneksi atau aturan Firebase.");
-                console.error(error);
-            });
-            
-            // UI akan direset secara lokal oleh listener Firebase
-            localResetUI(itemId);
-        }
-
-        // Mereset UI lokal berdasarkan item default
-        function localResetUI(itemId, inputMinutes = null) {
-            const item = THAWING_ITEMS.find(i => i.id === itemId);
-            if (!item) return;
-
-            const finalInput = inputMinutes !== null ? inputMinutes : item.defaultTimeMinutes;
-            
-            clearTimeout(activeIntervals[itemId]);
-            delete activeIntervals[itemId];
-
-            const timerCard = document.getElementById(`card-${itemId}`);
-            const inputTime = document.getElementById(`time-input-${itemId}`);
-            const display = document.getElementById(`display-${itemId}`);
-            const alarmMessage = document.getElementById(`msg-${itemId}`);
-            const startButton = document.getElementById(`start-btn-${itemId}`);
-            const resetButton = document.getElementById(`reset-btn-${itemId}`);
-            
-            if (!timerCard || !inputTime || !display || !startButton || !resetButton) return; 
-
-            timerCard.classList.remove('alert', 'warning');
-            inputTime.readOnly = false;
-            startButton.style.display = 'block';
-            resetButton.style.display = 'none';
-            alarmMessage.style.display = 'none';
-
-            inputTime.value = finalInput;
-            display.textContent = formatTime(finalInput * 60);
-
-            // Fokus pada input hanya jika di-reset
-            // inputTime.focus(); 
-        }
-
-        // Fungsi untuk membuat elemen HTML timer
-        function createTimerCard(item) {
-            const timerListContainer = document.getElementById('timer-list');
-            
-            const card = document.createElement('div');
-            card.className = 'timer-card';
-            card.id = `card-${item.id}`;
-            
-            card.innerHTML = `
-                <h2>${item.name}</h2>
-                <div id="display-${item.id}" class="countdown-display">
-                    ${formatTime(item.defaultTimeMinutes * 60)}
-                </div>
-                
-                <div id="msg-${item.id}" class="alarm-message" style="display: none;"></div>
-
-                <div class="timer-controls">
-                    <label for="time-input-${item.id}">Durasi (mnt):</label>
-                    <input type="number" id="time-input-${item.id}" value="${item.defaultTimeMinutes}" min="1" max="180">
-                    <button id="start-btn-${item.id}" class="start-btn">START</button>
-                    <button id="reset-btn-${item.id}" class="reset-btn" style="display: none;">RESET</button>
-                </div>
-            `;
-            
-            timerListContainer.appendChild(card);
-            
-            document.getElementById(`start-btn-${item.id}`).addEventListener('click', () => startCountdown(item.id));
-            document.getElementById(`reset-btn-${item.id}`).addEventListener('click', () => resetTimer(item.id));
-
-            document.getElementById(`time-input-${item.id}`).addEventListener('input', (event) => {
-                if (!document.getElementById(`time-input-${item.id}`).readOnly) {
-                    const minutes = parseInt(event.target.value) || 0;
-                    const display = document.getElementById(`display-${item.id}`);
-                    display.textContent = formatTime(minutes * 60);
-                }
-            });
-            
-            localResetUI(item.id, item.defaultTimeMinutes);
-        }
-
-        // ===================================
-        // 🚨 LOGIKA SINKRONISASI REAL-TIME
-        // ===================================
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Render semua kartu timer
-            THAWING_ITEMS.forEach(item => {
-                createTimerCard(item);
-            });
-            notificationPermission = Notification.permission;
-            
-            // 2. Pasang Listener Real-time
-            dbRef.on('value', (snapshot) => {
-                const timersData = snapshot.val() || {}; 
-
-                THAWING_ITEMS.forEach(item => {
-                    const itemId = item.id;
-                    const timerState = timersData[itemId];
-                    
-                    if (timerState && timerState.endTime) {
-                        const endTime = timerState.endTime;
-                        const inputMinutes = timerState.inputMinutes || item.defaultTimeMinutes;
-                        
-                        if (endTime < Date.now()) {
-                            // Waktu sudah habis (past event), panggil tick untuk trigger alarm/reset
-                            tick(itemId, endTime, inputMinutes); 
-                        } else {
-                            // Waktu masih berjalan
-                            tick(itemId, endTime, inputMinutes);
-                        }
-                    } else {
-                        // Timer TIDAK berjalan (Sudah di-reset atau belum dimulai)
-                        clearTimeout(activeIntervals[itemId]);
-                        delete activeIntervals[itemId];
-
-                        localResetUI(itemId, item.defaultTimeMinutes); 
-                    }
-                });
-            });
+        li.querySelector(".plus").addEventListener("click", () => {
+          data.qty++;
+          totalHarga += data.price;
+          totalItems++;
+          updateTotalDisplay();
+          li.querySelector(".qty").innerText = data.qty;
+          li.querySelector(".harga").innerText = `Rp ${(data.qty * data.price).toLocaleString("id-ID")}`;
+          updateButtonQty(item, data.qty);
         });
-    </script>
+
+        li.querySelector(".minus").addEventListener("click", () => {
+          if (data.qty > 1) {
+            data.qty--;
+            totalHarga -= data.price;
+            totalItems--;
+            updateTotalDisplay();
+            li.querySelector(".qty").innerText = data.qty;
+            li.querySelector(".harga").innerText = `Rp ${(data.qty * data.price).toLocaleString("id-ID")}`;
+            updateButtonQty(item, data.qty);
+          } else {
+            removeCartItem(item, li);
+          }
+        });
+
+        li.querySelector(".hapus").addEventListener("click", () => {
+          removeCartItem(item, li);
+        });
+
+        cart.appendChild(li);
+      });
+    }
+  }
+
+  function removeCartItem(item, li) {
+    const data = pesanan.get(item);
+    totalHarga -= data.qty * data.price;
+    totalItems -= data.qty;
+    pesanan.delete(item);
+    updateTotalDisplay();
+    updateButtonQty(item, 0);
+
+    li.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+    li.style.opacity = '0';
+    li.style.transform = 'translateX(20px)';
+    
+    li.addEventListener('transitionend', () => {
+        li.remove();
+        if (pesanan.size === 0) {
+            cart.innerHTML = `<li class="text-gray-400 italic text-center py-4">Keranjang Anda kosong</li>`;
+        }
+    }, { once: true });
+  }
+
+  // Event listener untuk tombol 'Tambah'
+  addButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const item = btn.dataset.name;
+      const harga = parseInt(btn.dataset.price);
+
+      if (pesanan.has(item)) {
+        const data = pesanan.get(item);
+        data.qty++;
+        pesanan.set(item, data);
+      } else {
+        pesanan.set(item, { qty: 1, price: harga });
+      }
+
+      totalHarga += harga;
+      totalItems++;
+      updateTotalDisplay();
+      updateButtonQty(item, pesanan.get(item).qty);
+      renderCart();
+    });
+  });
+
+  // Fungsi untuk mereset semua pesanan
+  function resetAllOrders() {
+    // Reset data
+    pesanan.clear();
+    totalHarga = 0;
+    totalItems = 0;
+    
+    // Reset tampilan
+    updateTotalDisplay();
+    cart.innerHTML = `<li class="text-gray-400 italic text-center py-4">pesanan anda belum ada</li>`;
+
+    // Reset qty di setiap tombol menu
+    const allButtons = document.querySelectorAll('.add-to-cart');
+    allButtons.forEach(button => {
+        const qtyBtnSpan = button.querySelector(".qty-btn");
+        qtyBtnSpan.innerText = '0';
+        qtyBtnSpan.style.display = 'none';
+    });
+  }
+
+  // Event listener untuk tombol reset
+  resetButton.addEventListener('click', () => {
+    if (confirm("Apakah Anda yakin ingin menghapus semua pesanan?")) {
+        resetAllOrders();
+    }
+  });
+
+  // Event listener untuk tombol pop-up keranjang
+  cartToggleBtn.addEventListener("click", () => {
+    renderCart();
+    cartSection.classList.remove("translate-x-full");
+    cartOverlay.classList.remove("hidden");
+  });
+
+  // Event listener untuk tombol tutup pop-up
+  cartCloseBtn.addEventListener("click", () => {
+    cartSection.classList.add("translate-x-full");
+    cartOverlay.classList.add("hidden");
+  });
+
+  // Event listener untuk menutup keranjang saat overlay diklik
+  cartOverlay.addEventListener("click", () => {
+    cartSection.classList.add("translate-x-full");
+    cartOverlay.classList.add("hidden");
+  });
+
+  checkoutBtn.addEventListener("click", () => {
+    if (pesanan.size === 0) {
+      alert("Keranjang masih kosong!");
+      return;
+    }
+
+    const nama = customerName.value.trim();
+    if (!nama) {
+      alert("Silakan isi Nama Pelanggan terlebih dahulu.");
+      customerName.focus();
+      return;
+    }
+
+    const tipePesananBold = `*${orderType.value}*`;
+    const metodePembayaran = `*${paymentMethod.value}*`;
+    let pesan = `🔔 Pesanan Baru 🔔%0A%0A`;
+    pesan += `👤 Nama: ${nama}%0A`;
+    pesan += `📦 Tipe Pesanan: ${tipePesananBold}%0A`;
+    pesan += `🍜 *Daftar Pesanan:*%0A`;
+    
+    pesanan.forEach((data, item) => {
+        pesan += `- ${item}   ➡️   ${data.qty} pcs%0A`;
+    }); 
+    pesan += `%0A────────────────────────%0A`;
+    pesan += `💸 *Total:* ${totalEl.innerText}%0A`;
+    pesan += `────────────────────────%0A%0A`;
+    pesan += `💰 Metode Pembayaran: ${metodePembayaran}%0A%0A`;
+    pesan += `Terima kasih 🙏, pesanan Anda akan segera diproses.`;
+
+    const noWA = "6283187982993";
+    const url = `https://api.whatsapp.com/send?phone=${noWA}&text=${pesan}`;
+
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+  </script>
+
 </body>
 </html>
