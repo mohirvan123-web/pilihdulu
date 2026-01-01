@@ -669,7 +669,7 @@
     pesan += `💰 Metode Pembayaran: ${metodePembayaran}%0A%0A`;
     pesan += `Terima kasih 🙏, pesanan Anda akan segera diproses.`;
 
-    const noWA = "6283187982993";
+    const noWA = "6289513265895";
     const url = `https://api.whatsapp.com/send?phone=${noWA}&text=${pesan}`;
 
     window.open(url, "_blank", "noopener,noreferrer");
