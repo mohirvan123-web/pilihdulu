@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="id" style="scroll-behavior: smooth;">
 <head>
   <meta charset="UTF-8" />
@@ -53,7 +53,7 @@
   <header class="bg-blue-600 rounded-xl text-white py-2 shadow-lg sticky top-0 z-50">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
       <div class="flex justify-between items-center w-full mb-2 md:mb-0 md:w-auto">
-        <h1 class="text-2xl font-bold tracking-wide">Gacoan Jakarta</h1>
+        <h1 class="text-2xl font-bold tracking-wide">Gacoan Mondoroko</h1>
         <button id="cart-toggle" class="relative transform transition-transform duration-150 active:scale-95 md:hidden">
           <svg id="cart-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.102 1.743.707 1.743H18a2 2 0 002-2V7.786" />
