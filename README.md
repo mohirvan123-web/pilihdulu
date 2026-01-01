@@ -655,7 +655,7 @@
 
     const tipePesananBold = `*${orderType.value}*`;
     const metodePembayaran = `*${paymentMethod.value}*`;
-    let pesan = `🔔 Pesanan Baru 🔔%0A%0A`;
+    let pesan = `🔔🔔%0A%0A`;
     pesan += `👤 Nama: ${nama}%0A`;
     pesan += `📦 Tipe Pesanan: ${tipePesananBold}%0A`;
     pesan += `🍜 *Daftar Pesanan:*%0A`;
